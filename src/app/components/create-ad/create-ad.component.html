@@ -1,0 +1,56 @@
+<div class="container">
+  <form>
+  <div class="underContainer">
+
+    <span class="title" style="padding-bottom: 40px;">Create <span style="color: #d62b1f;">ad</span></span>
+    <div class="titleAd" style="padding-bottom: 20px;">
+      <label>Title:</label>
+      <input >
+    </div>
+    <div class="description" style="padding-bottom: 20px;">
+      <label>Description:</label>
+      <textarea></textarea>
+    </div>
+    <div class="buttons" style="padding-bottom: 20px;">
+      <button [ngClass]="{'selected' : used, 'deselected': !used}" (click)="usedButton()">USED</button>
+      <button [ngClass]="{'selected' : new, 'deselected': !new}" (click)="newButton()">NEW</button>
+    </div>
+    <div class="imageDiv">
+    <div class="clearfix">
+      <nz-upload
+        nzAction="https://jsonplaceholder.typicode.com/posts/"
+        nzListType="picture-card"
+        [nzShowButton]="fileList.length < 3"
+      >
+        <i nz-icon nzType="plus"></i>
+        <div class="ant-upload-text">Upload</div>
+      </nz-upload>
+      <nz-modal
+        [nzVisible]="previewVisible"
+        [nzContent]="modalContent"
+        [nzFooter]="null"
+        (nzOnCancel)="previewVisible = false"
+      >
+        <ng-template #modalContent>
+          <img [src]="previewImage" [ngStyle]="{ width: '100%' }" />
+        </ng-template>
+      </nz-modal>
+    </div>
+  </div>
+    <div class="price">
+      <label>Price:</label>
+      <div>
+      <input > <span style="margin-left: 5px;">CHF</span>
+    </div>
+    </div>
+    <div class="price">
+      <label>Ad will be charged:</label>
+      <div class="credit">
+        <img src="../../../assets/images/credits icon.png">
+        <div class="creditCount"><span style="color: #d62b1f;"><span style="color: #d62b1f; font-weight: bold;">6 </span>&nbsp;Credits</span></div>
+      </div>
+    </div>
+    <button class="confirmButton" style="margin-bottom: 20px;">Save changes</button>
+  </div>
+</form>
+</div>
