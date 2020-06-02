@@ -59,6 +59,7 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import {CardModule} from 'primeng/card';
 import { AdComponent } from './components/ad/ad.component';
 import {GalleriaModule} from 'primeng/galleria';
+import { SafeUrlPipe } from './shared/models/pipes/safe-url.pipe';
 
 
 registerLocaleData(en);
@@ -92,7 +93,8 @@ registerLocaleData(en);
     SiteComponent,
     ChangePasswordComponent,
     AdSingleCarouselComponent,
-    AdComponent
+    AdComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
